@@ -1,4 +1,18 @@
-int ft_hexa(unsigned int nb)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_outils.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asabir <asabir@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/24 22:33:51 by asabir            #+#    #+#             */
+/*   Updated: 2023/12/24 22:42:27 by asabir           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft_printf.h"
+
+int ft_hexamn(unsigned int nb)
 {
     int len;
     char ch[] = {'0', '1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'};
@@ -7,8 +21,8 @@ int ft_hexa(unsigned int nb)
 
     if (nb > 16)
 	{
-		len += ft_hexa(nb / 16);
-		len += ft_hexa(nb % 16);
+		len += ft_hexamn(nb / 16);
+		len += ft_hexamn(nb % 16);
 	}
     else
     {
@@ -18,7 +32,7 @@ int ft_hexa(unsigned int nb)
     return (len);
 }
 
-int ft_hexa(unsigned int nb)
+int ft_hexamj(unsigned int nb)
 {
     int len;
     char ch[] = {'0', '1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
@@ -27,8 +41,8 @@ int ft_hexa(unsigned int nb)
 
     if (nb > 16)
 	{
-		len += ft_hexa(nb / 16);
-		len += ft_hexa(nb % 16);
+		len += ft_hexamj(nb / 16);
+		len += ft_hexamj(nb % 16);
 	}
     else
     {
@@ -123,11 +137,4 @@ int	ft_putnbr(int nb)
 		ft_putchar(nb + 48);
 	return (len);
 }
-int main() {
-    int number = -2147483648;
- int length = ft_putnbr(number);
 
-    printf("\nLength of %d: %u\n", number, length);
-
-    return 0;
-}
