@@ -6,7 +6,7 @@
 /*   By: asabir <asabir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 22:33:51 by asabir            #+#    #+#             */
-/*   Updated: 2023/12/25 18:36:57 by asabir           ###   ########.fr       */
+/*   Updated: 2023/12/25 18:49:49 by asabir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 int	ft_hexamn(unsigned long long nb)
 {
-	int	len;
-	char *base = "0123456789abcdef";
+	int		len;
+	char	*base;
 
+	base = "0123456789abcdef";
 	len = 0;
 	if (nb >= 16)
 	{
@@ -57,7 +58,7 @@ int	ft_printpercent(void)
 
 int	ft_putchar(char c)
 {
-	return(write(1, &c, 1));
+	return (write(1, &c, 1));
 }
 
 int	ft_putstr(char *str)

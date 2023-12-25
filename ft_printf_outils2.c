@@ -6,7 +6,7 @@
 /*   By: asabir <asabir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 14:25:28 by asabir            #+#    #+#             */
-/*   Updated: 2023/12/25 17:41:22 by asabir           ###   ########.fr       */
+/*   Updated: 2023/12/25 18:48:18 by asabir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	ft_putnbr_unsigned(unsigned int nb)
 		ft_putchar(nb + 48);
 	return (len);
 }
+
 unsigned int	ft_size_unsigned(unsigned int nb)
 {
 	unsigned int	len;
@@ -40,6 +41,7 @@ unsigned int	ft_size_unsigned(unsigned int nb)
 	}
 	return (len);
 }
+
 unsigned int	ft_size(int nb)
 {
 	unsigned int	len;
