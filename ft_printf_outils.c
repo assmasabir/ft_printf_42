@@ -6,25 +6,26 @@
 /*   By: asabir <asabir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 22:33:51 by asabir            #+#    #+#             */
-/*   Updated: 2023/12/25 14:25:17 by asabir           ###   ########.fr       */
+/*   Updated: 2023/12/25 18:36:57 by asabir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_hexamn(unsigned int nb)
+int	ft_hexamn(unsigned long long nb)
 {
 	int	len;
+	char *base = "0123456789abcdef";
 
 	len = 0;
-	if (nb > 16)
+	if (nb >= 16)
 	{
 		len += ft_hexamn(nb / 16);
 		len += ft_hexamn(nb % 16);
 	}
 	else
 	{
-		ft_putchar("0123456789abcdef"[nb]);
+		ft_putchar(base[nb]);
 		len++;
 	}
 	return (len);
@@ -35,7 +36,7 @@ int	ft_hexamj(unsigned int nb)
 	int	len;
 
 	len = 0;
-	if (nb > 16)
+	if (nb >= 16)
 	{
 		len += ft_hexamj(nb / 16);
 		len += ft_hexamj(nb % 16);
@@ -56,8 +57,7 @@ int	ft_printpercent(void)
 
 int	ft_putchar(char c)
 {
-	write(1, &c, 1);
-	return (1);
+	return(write(1, &c, 1));
 }
 
 int	ft_putstr(char *str)
@@ -65,6 +65,8 @@ int	ft_putstr(char *str)
 	int	i;
 	int	len;
 
+	if (!str)
+		return (write(1, "(null)", 6));
 	i = 0;
 	len = 0;
 	while (str[i])

@@ -6,7 +6,7 @@
 /*   By: asabir <asabir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 01:28:29 by asabir            #+#    #+#             */
-/*   Updated: 2023/12/25 14:26:47 by asabir           ###   ########.fr       */
+/*   Updated: 2023/12/25 18:36:34 by asabir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	handle_format_specifier(char specifier, va_list args, int *len)
 	else if (specifier == 'p')
 	{
 		*len += ft_putstr("0x");
-		*len += ft_hexamn(va_arg(args, unsigned int));
+		*len += ft_hexamn(va_arg(args, unsigned long long));//---
 	}
 	else
 		return (0);
@@ -66,26 +66,3 @@ int	ft_printf(const char *format, ...)
 	return (len);
 }
 
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	int				num;
-// 	char			*str;
-// 	char			ch;
-// 	unsigned int	unsignedNum;
-// 	unsigned int	hexNum;
-
-// 	num = 42;
-// 	str = "Hello, world!";
-// 	ch = 'A';
-// 	unsignedNum = 123;
-// 	hexNum = 255;
-// 	ft_printf("Integer: %d\n", num);
-// 	ft_printf("String: %s\n", str);
-// 	ft_printf("Character: %c\n", ch);
-// 	ft_printf("Unsigned Integer: %u\n", unsignedNum);
-// 	ft_printf("Hexadecimal: %X\n", hexNum);
-// 	ft_printf("Percentage: %%\n");
-// 	return (0);
-// }
