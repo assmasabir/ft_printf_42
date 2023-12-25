@@ -6,7 +6,7 @@
 /*   By: asabir <asabir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 01:28:29 by asabir            #+#    #+#             */
-/*   Updated: 2023/12/24 22:49:46 by asabir           ###   ########.fr       */
+/*   Updated: 2023/12/25 13:53:04 by asabir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	ft_printf(const char *format, ...)
         len += ft_putnbr_unsigned(va_arg(args, unsigned int));
 			else if (*format == 'X')
         len += ft_hexamj(va_arg(args,unsigned int));
-      else if (*format == 'x')
+        else if (*format == 'x')
         len += ft_hexamn(va_arg(args,unsigned int));
       else if (*format == '%')
         len += ft_printpercent();
@@ -49,10 +49,7 @@ int	ft_printf(const char *format, ...)
 		}
 		}
 		else
-		{
-			putchar(*format);
-      		len++;
-		}
+			len += ft_putchar(*format);
 		format++;
 	}
 	va_end(args);
@@ -60,24 +57,24 @@ int	ft_printf(const char *format, ...)
 }
 #include <stdio.h>
 
-int main()
-{
+// int main()
+// {
   
-    int num = 42;
-    char *str = "Hello, world!";
-    char ch = 'A';
-    unsigned int unsignedNum = 123;
-    unsigned int hexNum = 255;
+//     int num = 42;
+//     char *str = "Hello, world!";
+//     char ch = 'A';
+//     unsigned int unsignedNum = 123;
+//     unsigned int hexNum = 255;
 
 
-    ft_printf("Testing ft_printf:\n");
-    ft_printf("Integer: %d\n", num);
-    ft_printf("String: %s\n", str);
-    ft_printf("Character: %c\n", ch);
-    ft_printf("Unsigned Integer: %u\n", unsignedNum);
-    ft_printf("Hexadecimal: %X\n", hexNum);
-    ft_printf("Percentage: %%\n");
+//     ft_printf("Testing ft_printf:\n");
+//     ft_printf("Integer: %d\n", num);
+//     ft_printf("String: %s\n", str);
+//     ft_printf("Character: %c\n", ch);
+//     ft_printf("Unsigned Integer: %u\n", unsignedNum);
+//     ft_printf("Hexadecimal: %X\n", hexNum);
+//     ft_printf("Percentage: %%\n");
 
-    return 0;
-}
+//     return 0;
+// }
 
