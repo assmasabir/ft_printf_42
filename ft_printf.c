@@ -6,7 +6,7 @@
 /*   By: asabir <asabir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 01:28:29 by asabir            #+#    #+#             */
-/*   Updated: 2023/12/25 18:51:40 by asabir           ###   ########.fr       */
+/*   Updated: 2023/12/25 18:55:41 by asabir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	handle_format_specifier(char specifier, va_list args, int *len)
 	else if (specifier == 'p')
 	{
 		*len += ft_putstr("0x");
-		*len += ft_hexamn(va_arg(args, unsigned long long));
+		*len += ft_hexamn(va_arg(args, unsigned long));
 	}
 	else
 		return (0);

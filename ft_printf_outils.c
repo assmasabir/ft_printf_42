@@ -6,13 +6,13 @@
 /*   By: asabir <asabir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 22:33:51 by asabir            #+#    #+#             */
-/*   Updated: 2023/12/25 18:49:49 by asabir           ###   ########.fr       */
+/*   Updated: 2023/12/25 18:55:35 by asabir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_hexamn(unsigned long long nb)
+int	ft_hexamn(unsigned long nb)
 {
 	int		len;
 	char	*base;
